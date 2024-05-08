@@ -1,6 +1,7 @@
 defmodule FoodTruck.Faclities.Location do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query, only: [from: 2]
   alias FoodTruck.{Faclities, Faclities.Location, Repo}
 
   schema "locations" do
@@ -21,6 +22,12 @@ defmodule FoodTruck.Faclities.Location do
     |> cast(attrs, [:location_id, :applicant, :location_description, :address, :food_items, :latitude, :longitude])
     |> validate_required([:location_id, :applicant, :address, :latitude, :longitude])
     |> unique_constraint(:location_id)
+  end
+
+  def search(query, search_term) do
+    wildcard_search = "%#{search_term}%"
+    from location in query,
+    where: ilike(location.food_items, ^wildcard_search)
   end
 
 

@@ -49,35 +49,3 @@ defmodule FoodTruckWeb.Router do
     end
   end
 end
-
-# mix ecto.create
-# Compiling 20 files (.ex)
-# warning: no route path for FoodTruckWeb.Router matches "/locations/#{assigns.location}"
-#   lib/food_truck_web/live/location_live/show.html.heex:30: FoodTruckWeb.LocationLive.Show.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations"
-#   lib/food_truck_web/live/location_live/index.html.heex:45: FoodTruckWeb.LocationLive.Index.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations"
-#   lib/food_truck_web/live/location_live/index.html.heex:38: FoodTruckWeb.LocationLive.Index.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations/#{location}/edit"
-#   lib/food_truck_web/live/location_live/index.html.heex:26: FoodTruckWeb.LocationLive.Index.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations/#{assigns.location}"
-#   lib/food_truck_web/live/location_live/show.html.heex:23: FoodTruckWeb.LocationLive.Show.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations/#{location}"
-#   lib/food_truck_web/live/location_live/index.html.heex:24: FoodTruckWeb.LocationLive.Index.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations"
-#   lib/food_truck_web/live/location_live/show.html.heex:21: FoodTruckWeb.LocationLive.Show.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations/#{location}"
-#   lib/food_truck_web/live/location_live/index.html.heex:13: FoodTruckWeb.LocationLive.Index.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations/#{assigns.location}/show/edit"
-#   lib/food_truck_web/live/location_live/show.html.heex:5: FoodTruckWeb.LocationLive.Show.render/1
-
-# warning: no route path for FoodTruckWeb.Router matches "/locations/new"
-#   lib/food_truck_web/live/location_live/index.html.heex:4: FoodTruckWeb.LocationLive.Index.render/1

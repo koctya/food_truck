@@ -1,12 +1,14 @@
 defmodule FoodTruckWeb.LocationLive.Index do
   use FoodTruckWeb, :live_view
+  # import Phoenix.HTML.Form
 
   alias FoodTruck.Faclities
   alias FoodTruck.Faclities.Location
 
   @impl true
-  def mount(_params, _session, socket) do
-    {:ok, stream(socket, :locations, Faclities.list_locations())}
+  def mount(params, _session, socket) do
+    locations = Faclities.list_locations(params)
+    {:ok, stream(socket, :locations, locations)}
   end
 
   @impl true

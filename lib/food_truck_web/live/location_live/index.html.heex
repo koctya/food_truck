@@ -12,13 +12,9 @@
   rows={@streams.locations}
   row_click={fn {_id, location} -> JS.navigate(~p"/locations/#{location}") end}
 >
-  <:col :let={{_id, location}} label="Location"><%= location.location_id %></:col>
   <:col :let={{_id, location}} label="Applicant"><%= location.applicant %></:col>
-  <:col :let={{_id, location}} label="Location description"><%= location.location_description %></:col>
   <:col :let={{_id, location}} label="Address"><%= location.address %></:col>
   <:col :let={{_id, location}} label="Food items"><%= location.food_items %></:col>
-  <:col :let={{_id, location}} label="Latitude"><%= location.latitude %></:col>
-  <:col :let={{_id, location}} label="Longitude"><%= location.longitude %></:col>
   <:action :let={{_id, location}}>
     <div class="sr-only">
       <.link navigate={~p"/locations/#{location}"}>Show</.link>
@@ -35,7 +31,12 @@
   </:action>
 </.table>
 
-<.modal :if={@live_action in [:new, :edit]} id="location-modal" show on_cancel={JS.patch(~p"/locations")}>
+<.modal
+  :if={@live_action in [:new, :edit]}
+  id="location-modal"
+  show
+  on_cancel={JS.patch(~p"/locations")}
+>
   <.live_component
     module={FoodTruckWeb.LocationLive.FormComponent}
     id={@location.id || :new}

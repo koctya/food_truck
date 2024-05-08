@@ -17,8 +17,16 @@ defmodule FoodTruck.Faclities do
       [%Location{}, ...]
 
   """
-  def list_locations do
-    Repo.all(Location)
+    def list_locations() do
+      Location
+      |> Repo.all()
+    end
+
+  def list_locations(%{"search" => search}) do
+    search_term = get_in(search, ["query"])
+    Location
+    |> Location.search(search_term)
+    |> Repo.all()
   end
 
   @doc """
