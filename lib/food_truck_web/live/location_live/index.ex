@@ -7,7 +7,11 @@ defmodule FoodTruckWeb.LocationLive.Index do
 
   @impl true
   def mount(params, _session, socket) do
-    locations = Faclities.list_locations(params)
+    locations = if params == %{} do
+      Faclities.list_locations()
+    else
+      Faclities.list_locations(params)
+    end
     {:ok, stream(socket, :locations, locations)}
   end
 
